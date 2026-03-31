@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>🇹🇷 Istanbul 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f0f0;color:#111;line-height:1.5;font-size:15px}
+
+/* HEADER */
+header{background:#212121;color:#fff;padding:13px 14px 10px;text-align:center;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+header h1{font-size:16px;font-weight:800}
+header p{font-size:11px;color:#999;margin-top:2px}
+
+/* TABS */
+.tabs{display:flex;overflow-x:auto;background:#fff;border-bottom:1px solid #ddd;position:sticky;top:54px;z-index:199;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;min-width:54px;padding:11px 12px 9px;font-size:11px;font-weight:800;border:none;border-bottom:3px solid transparent;background:transparent;color:#888;cursor:pointer;white-space:nowrap;text-transform:uppercase;letter-spacing:.3px}
+.tab-btn.active{color:#111;border-bottom-color:#c0392b}
+.tab-info.active{border-bottom-color:#1565c0;color:#1565c0}
+
+/* CONTENT */
+.tab-content{display:none;padding:10px 10px 48px}
+.tab-content.active{display:block}
+.day-hdr{color:#fff;font-size:14px;font-weight:800;padding:10px 12px;border-radius:8px;margin-bottom:10px;letter-spacing:.1px}
+
+/* CARD */
+.card{background:#fff;border-radius:12px;border-left:4px solid var(--ac,#999);padding:12px;margin:5px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.card-lgbt{border-left-color:#9b59b6 !important;background:linear-gradient(90deg,#fdf6ff 0%,#fff 16px)}
+.card-head{display:flex;align-items:flex-start;gap:9px;margin-bottom:7px}
+.card-ico{font-size:22px;flex-shrink:0;margin-top:1px;line-height:1}
+.card-meta{flex:1;min-width:0}
+.card-time{font-size:11px;font-weight:800;color:var(--ac);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.card-name{font-size:14px;font-weight:800;color:#111;line-height:1.3}
+.badge-price{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.card-desc{font-size:13px;color:#333;line-height:1.6;margin-bottom:8px}
+
+/* EXPAND BLOCKS */
+.expand-block{border-radius:8px;overflow:hidden;margin-bottom:6px}
+.expand-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:9px 12px;font-size:12px;font-weight:700;border:none;cursor:pointer;text-align:left;gap:8px}
+.expand-btn span:first-child{flex:1}
+.chev{font-size:16px;font-weight:400;transition:transform .2s;display:inline-block;color:inherit;opacity:.6}
+.expand-btn[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.expand-body{padding:9px 12px 10px;font-size:12.5px;line-height:1.6}
+.expand-body p{color:inherit}
+
+.ctx-block .expand-btn{background:#e8eaf6;color:#3949ab}
+.ctx-block .expand-body{background:#eef0fb;color:#1a237e}
+.tip-block .expand-btn{background:#fff8e1;color:#e65100}
+.tip-block .expand-body{background:#fffde7;color:#4e3300}
+.alt-block .expand-btn{background:#e8f5e9;color:#2e7d32}
+.alt-block .expand-body{background:#f1f8e9;color:#1b4a1e}
+
+/* CARD FOOTER + MAPS CTA */
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:9px;border-top:1px solid #f0f0f0;margin-top:6px}
+.card-addr{font-size:10.5px;color:#aaa;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.maps-cta{background:#1a73e8;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 14px;border-radius:24px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;flex-shrink:0;box-shadow:0 1px 4px rgba(26,115,232,.3)}
+
+/* TRANSPORT */
+.tr{display:flex;align-items:flex-start;gap:8px;padding:7px 11px;margin:2px 4px;border-radius:7px;font-size:11.5px;line-height:1.7}
+.tr-arrow{font-size:13px;font-weight:900;flex-shrink:0;margin-top:1px;opacity:.6}
+.tr-lines{display:flex;flex-direction:column;gap:2px;flex:1}
+.tr-after{background:#e3f2fd;border-left:3px solid #1976d2;color:#0d47a1}
+.tr-before{background:#e8f5e9;border-left:3px solid #388e3c;color:#1b5e20}
+.tw{font-weight:700}
+.tt{color:#1565c0;font-weight:600}
+.tx{color:#e65100;font-weight:600}
+.tr-after .tw{color:#0d47a1}
+.tr-before .tw{color:#1b5e20}
+
+/* INFO TAB */
+.info-sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+.info-hdr{color:#fff;font-size:13px;font-weight:800;padding:10px 14px}
+.info-row{padding:10px 14px;border-bottom:1px solid #f5f5f5;display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:start}
+.info-row:last-child{border-bottom:none}
+.info-lbl{font-size:10.5px;font-weight:800;color:#c0392b;text-transform:uppercase;letter-spacing:.3px;padding-top:2px;white-space:nowrap}
+.info-val{font-size:13px;color:#333;line-height:1.55}
+
+footer{text-align:center;padding:22px 16px;font-size:11px;color:#aaa;background:#e4e4e4;margin-top:0}
+
+/* DARK MODE */
+@media(prefers-color-scheme:dark){
+  body{background:#121212;color:#e4e4e4}
+  header{background:#0a0a0a}
+  .tabs{background:#1c1c1c;border-color:#2a2a2a}
+  .tab-btn{color:#666}
+  .tab-btn.active{color:#fff;border-bottom-color:#ef5350}
+  .day-hdr{opacity:.95}
+  .card{background:#1e1e1e;box-shadow:none}
+  .card-lgbt{background:linear-gradient(90deg,#1a0f1e 0%,#1e1e1e 16px) !important}
+  .card-name{color:#f0f0f0}
+  .card-desc{color:#bbb}
+  .card-foot{border-top-color:#2a2a2a}
+  .card-addr{color:#555}
+  .badge-price{background:#0d2a0d;border-color:#2e7d32;color:#a5d6a7}
+  .ctx-block .expand-btn{background:#0d0f2b;color:#7986cb}
+  .ctx-block .expand-body{background:#0a0c22;color:#9fa8da}
+  .tip-block .expand-btn{background:#1a1200;color:#ffa000}
+  .tip-block .expand-body{background:#140e00;color:#ffe082}
+  .alt-block .expand-btn{background:#061206;color:#66bb6a}
+  .alt-block .expand-body{background:#040d04;color:#a5d6a7}
+  .tr-after{background:#0a1628;border-color:#1976d2;color:#90caf9}
+  .tr-before{background:#061206;border-color:#388e3c;color:#a5d6a7}
+  .tt{color:#64b5f6}.tx{color:#ffb74d}
+  .info-sec{background:#1e1e1e;box-shadow:none}
+  .info-hdr{opacity:.95}
+  .info-row{border-color:#2a2a2a}
+  .info-val{color:#ccc}
+  footer{background:#1a1a1a;color:#555}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🇹🇷 Istanbul — Avril 2026</h1>
+  <p>Sofitel Taksim · Planning complet · Fonctionne hors-ligne</p>
+</header>
+<div class="tabs" id="tabbar">
+<button class="tab-btn" id="btn-sam" onclick="go('sam')">SAM 4</button>
+<button class="tab-btn" id="btn-dim" onclick="go('dim')">DIM 5</button>
+<button class="tab-btn" id="btn-lun" onclick="go('lun')">LUN 6</button>
+<button class="tab-btn" id="btn-mar" onclick="go('mar')">MAR 7</button>
+<button class="tab-btn" id="btn-mer" onclick="go('mer')">MER 8</button>
+<button class="tab-btn" id="btn-jeu" onclick="go('jeu')">JEU 9</button>
+<button class="tab-btn tab-info" id="btn-info" onclick="go('info')">ℹ️ INFOS</button>
+
+</div>
+<div class="tab-content" id="day-sam"><div class="day-hdr" style="background:#c0392b">Samedi 4 Avril — Arrivée</div>
+
+<div class="card" style="--ac:#c0392b">
+  <div class="card-head">
+    <span class="card-ico">🏨</span>
+    <div class="card-meta">
+      <div class="card-time">17h–19h</div>
+      <div class="card-name">Sofitel Istanbul Taksim</div>
+    </div>
+    <span class="badge-price">Check-in</span>
+  </div>
+  <p class="card-desc">Arrivée depuis IST. Check-in, se rafraîchir, poser les bagages.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-sam-1719',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-sam-1719" hidden>
+    <p>Taksim est le cœur moderne d'Istanbul — lieu des manifestations Gezi 2013. Siraselviler Cad. descend directement vers Cihangir, le quartier le plus libéral de la ville.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-sam-1719',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-sam-1719" hidden>
+    <p>Demander une chambre côté Bosphore — vue au lever du soleil inoubliable. Late check-out souvent accordé le jeudi 9.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-sam-1719',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-sam-1719" hidden>
+    <p>💶 Mukarnas Taksim Hotel (~70 €/nuit, noté 9,2) ou The House Hotel Pera (~80 €).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Siraselviler Cad. No 13, Taksim</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Sofitel+Istanbul+Taksim" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min — descendre Siraselviler Cad. vers İstiklal</span></div></div>
+
+<div class="card" style="--ac:#c0392b">
+  <div class="card-head">
+    <span class="card-ico">🚶</span>
+    <div class="card-meta">
+      <div class="card-time">19h–21h</div>
+      <div class="card-name">İstiklal Caddesi &amp; Çiçek Pasajı</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">3 km de vie urbaine avec le tramway rouge vintage. Le Çiçek Pasajı (1876) = ancien théâtre d'opéra grec reconverti en brasseries historiques sous verrière.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-sam-1921',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-sam-1921" hidden>
+    <p>İstiklal signifie 'indépendance'. Autrefois Grande Rue de Péra, artère cosmopolite où se côtoyaient Grecs, Arméniens et Juifs ottomans. Les grandes ambassades européennes y avaient leurs consulats — certains bâtiments sont encore là.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-sam-1921',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-sam-1921" hidden>
+    <p>Les meilleurs bars sont dans les ruelles perpendiculaires : Sofyalı Sk., Balo Sk., Asmalımescit Sk. İstiklal directe = prix gonflés et ambiance touristique.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-sam-1921',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-sam-1921" hidden>
+    <p>💶 Tünel Meydanı (bas d'İstiklal) — terrasses avec vue sur la Corne d'Or, ambiance locale.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 İstiklal Caddesi, Beyoğlu</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Istiklal+Caddesi+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 3 min — première ruelle à gauche</span></div></div>
+
+<div class="card" style="--ac:#c0392b">
+  <div class="card-head">
+    <span class="card-ico">🍽</span>
+    <div class="card-meta">
+      <div class="card-time">21h–23h</div>
+      <div class="card-name">Dîner — Asmalı Cavit</div>
+    </div>
+    <span class="badge-price">15–25 €/pers</span>
+  </div>
+  <p class="card-desc">Meyhane mythique d'Asmalımescit depuis les années 2000. Rakı + mezze en partage. Clientèle 100% locale en semaine.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-sam-2123',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-sam-2123" hidden>
+    <p>Les meyhanes sont à Istanbul ce que les bistrots sont à Paris. Tradition ottomane héritée des taverniers grecs et arméniens. Le rakı (anisé, 45°) se boit dilué dans l'eau froide — il devient blanc laiteux, d'où son surnom : 'lait de lion'.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-sam-2123',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-sam-2123" hidden>
+    <p>Commander : haydari (yaourt ail), patlıcan fumée, puis kokorec (intestins grillés — emblématique). Alt si complet : Zübeyir Ocakbaşı (Bekar Sk. 28).</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-sam-2123',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-sam-2123" hidden>
+    <p>💶 Hayvore (Kallavi Sk. 4, cuisine mer Noire, ~8 €/pers) ou Ficcin (Kallavi Sk. 13, caucasien, ~8 €).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Asmalımescit Mah., Minare Sk. 2, Beyoğlu</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Asmali+Cavit+Beyoglu+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 2 min — même rue</span></div></div>
+
+<div class="card card-lgbt" style="--ac:#c0392b">
+  <div class="card-head">
+    <span class="card-ico">🏳️‍🌈</span>
+    <div class="card-meta">
+      <div class="card-time">23h–03h</div>
+      <div class="card-name">Soirée — Bars + options LGBT</div>
+    </div>
+    <span class="badge-price">Bière ~3 €</span>
+  </div>
+  <p class="card-desc">Sendika Bar (Beyoğlu, queer-owned, crowd local décontracté). Stay Club (Siraselviler 35/2 — votre rue ! seul bear bar d'Istanbul, drag shows, jusqu'à 4h). EspressoLab Taksim (rooftop İstiklal, point de ralliement gay non-officiel dès 21h).</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-sam-2303',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-sam-2303" hidden>
+    <p>Cihangir et Asmalımescit sont les quartiers les plus libéraux d'Istanbul — une bulle bohème dans une ville à majorité musulmane. Le Stay Club est littéralement à 50m du Sofitel.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-sam-2303',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-sam-2303" hidden>
+    <p>Stay Club : entrée gratuite en semaine, ~10 € WE. Éviter toute démonstration d'affection très visible à l'extérieur des bars.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-sam-2303',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-sam-2303" hidden>
+    <p>💶 Chianti Pub (Öğüt Sk. 6, 2e étage, Beyoğlu) — bar gay local depuis 2006, karaoké, no cover.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Siraselviler Cad. No 35/2, Beyoğlu (Stay Club)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Stay+Club+Istanbul+Taksim" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="day-dim"><div class="day-hdr" style="background:#1565c0">Dimanche 5 Avril — Sultanahmet + Derviches</div>
+<div class="tr tr-before"><span class="tr-arrow">↑</span><div class="tr-lines"><span class="tw">🚶 25 min longeant le Bosphore</span><span class="tt">🚌 Tram T1 → Sultanahmet (~1,50 €)</span><span class="tx">🚕 Taxi ~8 €</span></div></div>
+<div class="card" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🕌</span>
+    <div class="card-meta">
+      <div class="card-time">09h30–12h</div>
+      <div class="card-name">Hagia Sophia / Sainte-Sophie</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">Construit en 537, pendant 1 000 ans la plus grande cathédrale du monde. Converti en mosquée (1453), musée (1934), remosquée (2020). Mosaïques byzantines + décor islamique ottoman = 1 500 ans d'histoire en un lieu.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-093012',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-093012" hidden>
+    <p>La Sainte-Sophie résume toute l'histoire d'Istanbul : byzantine, ottomane, laïque, re-islamiste. En 1453, la chute de Constantinople marque la fin de l'Empire romain d'Orient — 2 000 ans après Rome.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-093012',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-093012" hidden>
+    <p>Arriver à 9h à l'ouverture. Inscription gratuite en ligne recommandée sur muze.gov.tr. Monter à la galerie supérieure pour les mosaïques byzantines de près.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-093012',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-093012" hidden>
+    <p>💶 Petite Sainte-Sophie (Küçük Ayasofya) — ancienne église byzantine convertie, quasi sans touristes. Gratuit.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Sultanahmet Meydanı 1, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Hagia+Sophia+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 10 min vers Sirkeci</span></div></div>
+
+<div class="card" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🍜</span>
+    <div class="card-meta">
+      <div class="card-time">12h–13h30</div>
+      <div class="card-name">Déjeuner — Lokantas Hocapaşa Sokak</div>
+    </div>
+    <span class="badge-price">5–10 €/pers</span>
+  </div>
+  <p class="card-desc">La meilleure rue de lokantas d'Istanbul. Hacı Abdullah depuis 1888 — cuisine ottomane de maison. Pointer les plats en vitrine, aucun besoin de parler turc.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-121330',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-121330" hidden>
+    <p>L'esnaf lokantası (restaurant de corporatistes) : cuisine du jour faite le matin, servie jusqu'à 14h. Pratique remontant aux guildes ottomanes. Fréquentés par les travailleurs du quartier.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-121330',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-121330" hidden>
+    <p>Arriver entre 12h et 14h pour les plats frais. Menu complet (soupe + plat + dessert) : 5–8 €. Après 14h les plats sont réchauffés.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-121330',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-121330" hidden>
+    <p>💶 Tarihi Sultanahmet Köftecisi (Divan Yolu Cad. 12) — köfte légendaire depuis 1920, ~5 €/plat.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Hocapaşa Sk., Sirkeci, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Hocapasa+Sokak+Sirkeci+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min vers la Citerne</span></div></div>
+
+<div class="card" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🏛</span>
+    <div class="card-meta">
+      <div class="card-time">13h30–15h</div>
+      <div class="card-name">Citerne Basilique (Yerebatan Sarayı)</div>
+    </div>
+    <span class="badge-price">~15 € en ligne</span>
+  </div>
+  <p class="card-desc">Citerne byzantine souterraine du VI° siècle. 9 800 m², 336 colonnes récupérées sur des sites antiques. Les deux têtes de Méduse retournées pour neutraliser le mauvais œil.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-133015',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-133015" hidden>
+    <p>Istanbul est construite sur des dizaines de citernes byzantines — la plupart encore inexplorées. Yerebatan alimentait le Grand Palais impérial. Redécouverte au XVI° siècle par un voyageur hollandais qui vit des habitants pêcher depuis leur cave.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-133015',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-133015" hidden>
+    <p>Réserver sur yerebatan.com (~15 €). Créneau horaire obligatoire, arriver 15 min avant.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-133015',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-133015" hidden>
+    <p>💶 Citerne Şerefiye (5 min, ~8 €) ou Citerne Theodosienne (découverte en 2017 !) ~10 €.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Yerebatan Cad. 1/3, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Basilica+Cistern+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 3 min vers Mosquée Bleue</span></div></div>
+
+<div class="card" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🕌</span>
+    <div class="card-meta">
+      <div class="card-time">15h–17h</div>
+      <div class="card-name">Mosquée Bleue + Arasta Bazaar</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">6 minarets — seule La Mecque en avait autant à l'époque. Le sultan dut financer un 7° minaret à La Mecque. 20 000 carreaux d'İznik bleus. Arasta Bazaar juste derrière : artisanat honnête, zéro pression.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-1517',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-1517" hidden>
+    <p>Ahmed I avait 19 ans quand il fit construire cette mosquée pour rivaliser avec Sainte-Sophie. L'Arasta Bazaar appartient encore à des familles de l'époque ottomane — les prix y sont bien plus honnêtes que le Grand Bazar.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-1517',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-1517" hidden>
+    <p>Fermée ~30 min à chaque prière. Musée des Mosaïques du Grand Palais (entrée Arasta) ~8 € — caché, fascinant, quasi sans touristes.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-1517',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-1517" hidden>
+    <p>💶 Gratuit et désert : Mosquée de Sokollu Mehmet Paşa — chef-d'œuvre de Sinan, zéro touriste.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Sultanahmet Meydanı, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Blue+Mosque+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min</span></div></div>
+<div class="tr tr-before"><span class="tr-arrow">↑</span><div class="tr-lines"><span class="tt">🚌 Tram T1 + marche (10 min)</span><span class="tx">🚕 Taxi ~8 € depuis Sultanahmet</span></div></div>
+<div class="card" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🌀</span>
+    <div class="card-meta">
+      <div class="card-time">17h–19h</div>
+      <div class="card-name">⭐ Cérémonie Sema — Galata Mevlevi Müzesi</div>
+    </div>
+    <span class="badge-price">~15–20 €</span>
+  </div>
+  <p class="card-desc">Cérémonie authentique de derviches tourneurs dans le tekke du XV° siècle. Dimanche 17h uniquement. Vrais derviches, musique soufie live : ney, tambour, chants.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-1719',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-1719" hidden>
+    <p>Le Sema n'est PAS un spectacle — c'est une prière en mouvement inscrite au Patrimoine UNESCO (2008). 1 000 jours de formation pour chaque derviche. Main droite vers le ciel (reçoit la grâce divine), main gauche vers la terre (la redistribue). L'ordre Mevlevi fut fondé par Rumi au XIII° siècle et interdit par Atatürk en 1923 — rétabli dans les années 50.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-1719',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-1719" hidden>
+    <p>⚠️ Billetterie UNIQUEMENT sur place — passer le SAMEDI avant midi pour acheter les tickets du dimanche 17h. Arriver 20 min en avance. Silence absolu pendant la cérémonie.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-1719',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-1719" hidden>
+    <p>💶 Si raté : Hodjapasha Cultural Centre (Sirkeci, hammam ottoman 550 ans, cérémonie quotidienne 19h) ~30 €.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Galip Dede Cad. No 15, Tünel, Beyoğlu</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Galata+Mevlevi+Museum+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 10 min vers Karaköy</span></div></div>
+
+<div class="card" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🍽</span>
+    <div class="card-meta">
+      <div class="card-time">20h–22h</div>
+      <div class="card-name">Dîner — Karaköy Lokantası</div>
+    </div>
+    <span class="badge-price">20–30 €/pers</span>
+  </div>
+  <p class="card-desc">Meyhane-restaurant mythique sur Kemankeş Street. Ouvert jusqu'à minuit. Langue de bœuf fumée, anchois marinés, cuisses de poulet frites, poisson du jour.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-2022',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-2022" hidden>
+    <p>Karaköy est l'ancien Galata — quartier des marchands génois au Moyen-Âge (la Tour de Galata était leur citadelle). Reconverti en quartier branché depuis Galataport (2022).</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-2022',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-2022" hidden>
+    <p>Réserver, surtout le dimanche. Plat du jour ardoisé = meilleur rapport qualité/prix.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-2022',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-2022" hidden>
+    <p>💶 Mahkeme Lokantası (même rue, plus simple, ~12 €) ou Nato Lokantası (plat + soupe ~6 €).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Kemankeş Cad. 37/A, Karaköy</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Karakoy+Lokantasi+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 15 min vers Cihangir</span><span class="tx">🚕 Taxi ~4 €</span></div></div>
+
+<div class="card card-lgbt" style="--ac:#1565c0">
+  <div class="card-head">
+    <span class="card-ico">🏳️‍🌈</span>
+    <div class="card-meta">
+      <div class="card-time">22h30–02h</div>
+      <div class="card-name">Soirée LGBT — Stay Club + Tek Yön</div>
+    </div>
+    <span class="badge-price">Entrée 5–15 €</span>
+  </div>
+  <p class="card-desc">Stay Club (Siraselviler 35/2, votre rue !) — drag show le dimanche très populaire, musique orientale/techno, bear bar. Tek Yön Club (Beyoğlu) — club gay le plus fréquenté d'Istanbul, ouvert tous les soirs. Ex Barbahce (Beyoğlu, nouveau 2025) — bar intime, parfait pré-soirée.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-dim-223002',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-dim-223002" hidden>
+    <p>La scène LGBT d'Istanbul est concentrée autour de Taksim et Beyoğlu. Elle est vivante et résistante malgré l'interdiction de la Pride depuis 2015. Les clubs sont sûrs à l'intérieur — la discrétion en extérieur reste recommandée.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-dim-223002',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-dim-223002" hidden>
+    <p>Stay Club : entrée gratuite semaine, ~10 € WE. Drag show dimanche = très animé. Tek Yön : actif tous les soirs.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-dim-223002',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-dim-223002" hidden>
+    <p>💶 EspressoLab Taksim (rooftop İstiklal, point de ralliement gay non-officiel, café ~4 €, sans cover).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Siraselviler Cad. No 35/2, Beyoğlu (Stay Club)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Stay+Club+Istanbul+Taksim" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="day-lun"><div class="day-hdr" style="background:#e65100">Lundi 6 Avril — Balat, Fener &amp; Hammam</div>
+<div class="tr tr-before"><span class="tr-arrow">↑</span><div class="tr-lines"><span class="tw">🚶 25 min longeant le Bosphore</span><span class="tt">🚌 Tram T1 → Eminönü (~1,50 €)</span><span class="tx">🚕 Taxi ~8 €</span></div></div>
+<div class="card" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🐟</span>
+    <div class="card-meta">
+      <div class="card-time">09h–09h30</div>
+      <div class="card-name">Balık Ekmek — Eminönü</div>
+    </div>
+    <span class="badge-price">2–3 €</span>
+  </div>
+  <p class="card-desc">Rituel Istanbuliote absolu : sandwich au maquereau grillé depuis les barques amarrées au pied du pont de Galata. ~2–3 €.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-090930',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-090930" hidden>
+    <p>Les barques à poisson existent à cet endroit depuis le XIX° siècle. Le pont de Galata relie symboliquement l'Istanbul historique (Eminönü) et moderne (Karaköy/Galata).</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-090930',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-090930" hidden>
+    <p>Tarihi Eminönü Balık Ekmekçisi = la vraie adresse. Pas les marchands sur le pont lui-même. Accompagner d'un turşu suyu (jus de légumes marinés acides) — très local.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-090930',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-090930" hidden>
+    <p>💶 Çorbacı Durağı (Eminönü) — soupe de lentilles + pain pour 1,50 €.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Eminönü, pied du pont de Galata</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Tarihi+Eminonu+Balik+Ekmek+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 15 min longeant la Corne d'Or</span><span class="tt">🚌 Bus 55T (~1,50 €)</span><span class="tx">🚕 Taxi ~6 €</span></div></div>
+
+<div class="card" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🎨</span>
+    <div class="card-meta">
+      <div class="card-time">09h30–13h</div>
+      <div class="card-name">Quartier Balat + Fener (UNESCO)</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">Balat : ancien quartier juif sépharade (expulsés d'Espagne en 1492, accueillis par Soliman). Maisons colorées sur les pentes, chats partout. Fener : quartier grec orthodoxe, Patriarcat Œcuménique encore actif. Église bulgare de Saint-Étienne : entièrement en fonte coulée à Vienne (1898) — unique au monde.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-093013',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-093013" hidden>
+    <p>Balat et Fener illustrent la mosaïque religieuse ottomane : mosquées, synagogues, églises orthodoxes et arméniennes dans le même rayon de 500m. La politique de tolérance des sultans (système des millets) a permis cette coexistence pendant 500 ans.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-093013',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-093013" hidden>
+    <p>Partir avant 10h : calme et lumière dorée pour les photos. Après 11h = Instagram invivable. Agora Meyhanesi : taverne ouverte depuis les années 1890.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-093013',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-093013" hidden>
+    <p>💶 Fener Kahve (terrasse vue Corne d'Or, thé + baklava maison ~3 €). Éviter les cafés 'colorés' pour Instagram — prix touristiques.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Balat &amp; Fener, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Balat+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min dans le quartier</span></div></div>
+
+<div class="card" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🍽</span>
+    <div class="card-meta">
+      <div class="card-time">13h–14h30</div>
+      <div class="card-name">Déjeuner local — Balat</div>
+    </div>
+    <span class="badge-price">4–8 €/pers</span>
+  </div>
+  <p class="card-desc">Chercher les enseignes sans menu en anglais ni photo. Plat du jour entre 4 et 7 €. GenAntik Café : thé + gâteau maison, Coccinelle rouge vintage devant la porte.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-131430',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-131430" hidden>
+    <p>Balat a longtemps été l'un des quartiers les plus pauvres d'Istanbul, laissé à l'abandon après le départ des populations juives vers Israël dans les années 50–60. La gentrification récente est source de tensions — les loyers ont triplé en 10 ans.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-131430',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-131430" hidden>
+    <p>Agora Meyhanesi (Balat) : taverne historique 1890s avec mezze et rakı — parfait pour déjeuner tardif et animé.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-131430',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-131430" hidden>
+    <p>💶 3–5 € max : çorba (soupe lentilles) + ekmek (pain) + ayran dans n'importe quelle çorbacı de Balat.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Rues de Balat, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Agora+Meyhanesi+Balat+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 20 min en montant vers Kariye</span><span class="tx">🚕 Taxi ~5 € recommandé</span></div></div>
+
+<div class="card" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🕌</span>
+    <div class="card-meta">
+      <div class="card-time">14h30–16h30</div>
+      <div class="card-name">Kariye + Süleymaniye + Aqueduc de Valens</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">Kariye (Église Chora, XIV°s.) : mosaïques byzantines parmi les mieux préservées du monde — un Sainte-Sophie bis, sans les foules. Süleymaniye (1558, Mimar Sinan) : la plus grandiose d'Istanbul. Aqueduc de Valens : arc romain du IV° siècle encore debout en plein centre-ville.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-14301630',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-14301630" hidden>
+    <p>Mimar Sinan a construit 300+ édifices au XVI° siècle — son premier chef-d'œuvre à 50 ans. L'aqueduc alimentait Constantinople depuis la forêt de Belgrade, à 20 km. Tombe de Soliman le Magnifique et Roxelane dans la cour de Süleymaniye.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-14301630',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-14301630" hidden>
+    <p>Vérifier la réouverture de Kariye en avril (restauration progressive). Tombe de Soliman + Roxelane dans la cour — gratuit.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-14301630',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-14301630" hidden>
+    <p>💶 Caché et gratuit : Büyük Valide Han (caravansérail ottoman) — rooftop panoramique + thé avec les commerçants locaux.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Edirnekapı (Kariye) / Beyazıt (Süleymaniye)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Suleymaniye+Mosque+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tt">🚌 Bus vers Cihangir (~1,50 €)</span><span class="tx">🚕 Taxi ~8–10 € vers Cihangir</span></div></div>
+
+<div class="card card-lgbt" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🧖</span>
+    <div class="card-meta">
+      <div class="card-time">16h30–19h30</div>
+      <div class="card-name">HAMMAM — Ağa Hamamı (1454) — Gay friendly</div>
+    </div>
+    <span class="badge-price">~70–90 €/pers</span>
+  </div>
+  <p class="card-desc">Le plus ancien hammam encore en activité à Istanbul. Construit sous Mehmed II en 1454. Situé dans Cihangir, 10 min du Sofitel. Mixte, personnel anglophone, atmosphère intime. Reconnu gay friendly.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-16301930',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-16301930" hidden>
+    <p>Le hammam est une institution héritée des thermes romains, islamifiée. Pendant des siècles, lieu social crucial — en particulier pour les femmes. Le Ağa Hamamı, classé monument historique, servait les janissaires de la caserne voisine.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-16301930',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-16301930" hidden>
+    <p>Réserver absolument sur agahamami.com. Prévoir 2h. Formule kese (gommage) + köpük masajı (massage moussant) ~70–80 €. Firuzaga Hamam (Cukurcuma Cad. 6) = alternative aussi gay friendly.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-16301930',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-16301930" hidden>
+    <p>💶 Gedikpaşa Hamamı (Grand Bazar, 1475) ~45–55 €. Firuzaga Hamam (Cihangir, gay friendly) ~50 €.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Turnacıbaşı Mah., Ağa Hamamı Sk. 5, Cihangir</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Aga+Hamami+Cihangir+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 3 min dans Cihangir</span></div></div>
+
+<div class="card" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🍽</span>
+    <div class="card-meta">
+      <div class="card-time">20h30–22h30</div>
+      <div class="card-name">Dîner — Ficcin (Cihangir)</div>
+    </div>
+    <span class="badge-price">8–15 €/pers</span>
+  </div>
+  <p class="card-desc">Institution de Cihangir. Spécialités géorgiennes et circassiennes : ficcin (pâtisserie farcie viande/noix), bazhe (poulet sauce aux noix). Clientèle d'artistes et journalistes.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-20302230',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-20302230" hidden>
+    <p>La Géorgie et la Circassie ont longtemps eu des liens avec l'Empire ottoman. Cette cuisine de montagne — noix, viande mijotée, épices douces — est radicalement différente de la cuisine turque populaire.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-20302230',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-20302230" hidden>
+    <p>~8–12 €/pers. À 2 min du hammam.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-20302230',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-20302230" hidden>
+    <p>💶 Hayvore (Kallavi Sk. 4, Cihangir, cuisine de la mer Noire, ~8 €, bondé de locaux).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Kallavi Sk. 13, Beyoğlu (Cihangir)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Ficcin+Cihangir+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 8 min vers İstiklal</span></div></div>
+
+<div class="card card-lgbt" style="--ac:#e65100">
+  <div class="card-head">
+    <span class="card-ico">🏳️‍🌈</span>
+    <div class="card-meta">
+      <div class="card-time">23h–03h</div>
+      <div class="card-name">Soirée — 360 Istanbul + SuperFabric</div>
+    </div>
+    <span class="badge-price">Entrée 10–20 €</span>
+  </div>
+  <p class="card-desc">360 Istanbul (penthouse İstiklal) — vue panoramique sur Istanbul illuminée, cocktails, club DJ à partir de 23h. SuperFabric (Cumhuriyet Cad. 42) — nightclub LGBT+, DJ sets, gogoboys, soirées thématiques. GZone Events — soirées queer (@gzoneparties sur Instagram).</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-lun-2303',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-lun-2303" hidden>
+    <p>SuperFabric est le club LGBT le plus animé d'Istanbul en 2025–2026. La scène nightlife de Beyoğlu résiste à la pression politique conservative.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-lun-2303',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-lun-2303" hidden>
+    <p>SuperFabric : cover ~15–20 € WE mais spectacles inclus. 360 plus accessible en semaine. Roxy Club (même rue que l'hôtel) = alternatif/jazz pour finir plus calmement.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-lun-2303',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-lun-2303" hidden>
+    <p>💶 Şahika Bar (Asmalımescit) — multi-niveaux, rooftop Corne d'Or, entrée gratuite.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 İstiklal Cad., Mısır Apt. (360) / Cumhuriyet Cad. 42 (SuperFabric)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=360+Istanbul+Beyoglu" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="day-mar"><div class="day-hdr" style="background:#6a1b9a">Mardi 7 Avril — Kadıköy &amp; Rive Asiatique</div>
+<div class="tr tr-before"><span class="tr-arrow">↑</span><div class="tr-lines"><span class="tw">🚶 25 min depuis le Sofitel</span><span class="tt">🚌 Tram T1 → Eminönü (~1,50 €)</span><span class="tx">🚕 Taxi ~8 €</span></div></div>
+<div class="card" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">⛴</span>
+    <div class="card-meta">
+      <div class="card-time">09h–10h</div>
+      <div class="card-name">Ferry Eminönü → Kadıköy</div>
+    </div>
+    <span class="badge-price">~1,50 €</span>
+  </div>
+  <p class="card-desc">Ferry public Şehir Hatları. 20 min sur le Bosphore, vue Sainte-Sophie, Tour de Léandre, Bosphore. Acheter un çay (~0,70 €) au bar du bateau.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-0910',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-0910" hidden>
+    <p>Le Bosphore = 50 000 navires par an dont des pétroliers russes géants. Istanbul est la seule métropole au monde sur deux continents. Côté asiatique = Anatolie, le territoire turc historique.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-0910',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-0910" hidden>
+    <p>Istanbulkart rechargeable à l'embarcadère. Ferries toutes les 20–30 min. S'asseoir à l'extérieur côté bâbord (gauche) pour la meilleure vue.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Embarcadère Eminönü, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Eminonu+Ferry+Terminal+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min depuis l'embarcadère Kadıköy</span></div></div>
+
+<div class="card" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">🐟</span>
+    <div class="card-meta">
+      <div class="card-time">10h–12h30</div>
+      <div class="card-name">Marché de Kadıköy</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">Le marché le plus authentique d'Istanbul côté asiatique. Poisson ultra-frais crié à la voix, 50 variétés de fromages, épices en vrac, baklava. Midye dolma (moules farcies au riz épicé) : 0,50 €/pièce.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-101230',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-101230" hidden>
+    <p>Kadıköy = ancienne Chalcédoine (VII° s. av. J.-C.), colonie grecque antérieure à Byzance. Aujourd'hui le quartier le plus laïque d'Istanbul — surnommé 'la rive bohème'.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-101230',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-101230" hidden>
+    <p>Épices en vrac = 3× moins cher qu'au Spice Bazaar touristique. Çiya Sofrası (dans le marché) = chef Musa Dağdeviren, préserve les recettes régionales disparues.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mar-101230',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mar-101230" hidden>
+    <p>💶 Islak Burger (hamburger à la vapeur, sauce tomate pimentée, ~1,50 €) — curiosité gastronomique.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Kadıköy Çarşısı, Kadıköy</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Kadikoy+Market+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 2 min</span></div></div>
+
+<div class="card" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">🍽</span>
+    <div class="card-meta">
+      <div class="card-time">12h30–14h</div>
+      <div class="card-name">Déjeuner — Yanyalı Fehmi Lokantası</div>
+    </div>
+    <span class="badge-price">8–12 €/pers</span>
+  </div>
+  <p class="card-desc">Restaurant centenaire. Fondé par un cuisinier immigré de Yanina (Grèce). Spécialité unique : köfte Yanyalı (boulettes d'agneau + aubergine grillée fumée).</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-123014',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-123014" hidden>
+    <p>Yanina (Ioannina) est une ville grecque qui fut longtemps ottomane. Cette recette = syncrétisme culinaire ottoman-balkanique résumé en un plat — l'histoire d'Istanbul en version comestible.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-123014',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-123014" hidden>
+    <p>Arriver à 12h30 — complet en 20 min. Ayran (yaourt salé dilué) = accord parfait avec les köfte.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mar-123014',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mar-123014" hidden>
+    <p>💶 Çiya Sofrası (à côté, cuisine régionale anatolienne, ~10–12 €, recommandé par Bourdain).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Muvakkithane Cad. 7, Kadıköy</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Yanyali+Fehmi+Lokantasi+Kadikoy" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 20 min en longeant la côte</span><span class="tt">🚌 Dolmuş (minibus) vers Moda ~1 €</span><span class="tx">🚕 Taxi ~4 €</span></div></div>
+
+<div class="card" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">🎨</span>
+    <div class="card-meta">
+      <div class="card-time">14h–17h</div>
+      <div class="card-name">Moda — Street art &amp; front de mer</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">Quartier le plus hipster d'Istanbul côté asiatique. Street art dans toutes les ruelles. Moda Sahili : promenade du bord de mer avec vue sur la skyline européenne (Sainte-Sophie, Galata). Rue Kadife = bars dès 17h.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-1417',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-1417" hidden>
+    <p>La Tour de Léandre (Kız Kulesi) = symbole d'Istanbul, XII° siècle au milieu du Bosphore. Légende : une princesse enfermée par son père pour la protéger d'une prophétie de mort par serpent... qui se réalisa quand un serpent sortit d'un panier de fruits.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-1417',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-1417" hidden>
+    <p>Moda Çayı (café en terrasse vue mer) pour le thé. Promenade entièrement à pied depuis le marché jusqu'au môle ~3 km, très agréable.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mar-1417',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mar-1417" hidden>
+    <p>💶 Tour street art gratuit de Kadıköy — les murals sont parmi les meilleurs de Turquie. Mural géant Atatürk incontournable.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Moda, Kadıköy</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Moda+Kadikoy+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tt">🚌 Ferry Kadıköy → Karaköy (~1,50 €, 20 min)</span></div></div>
+
+<div class="card" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">🗼</span>
+    <div class="card-meta">
+      <div class="card-time">17h–18h30</div>
+      <div class="card-name">Tour de Galata + Quartier Galata</div>
+    </div>
+    <span class="badge-price">~12 €</span>
+  </div>
+  <p class="card-desc">Tour génoise du XIV° siècle (1348), ancienne citadelle des marchands italiens. Vue 360° sur la Corne d'Or, le Bosphore et les deux continents. Rue Galip Dede : luthiers et instruments de musique traditionnels.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-171830',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-171830" hidden>
+    <p>Galata était la colonie génoise de Constantinople. La rue Galip Dede reste LA rue des instruments de musique turcs — saz, ney, kanun. Acheter un ney en souvenir ~20–30 €.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-171830',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-171830" hidden>
+    <p>File possible (30 min WE). Alt gratuit : cafés en terrasse autour de la Tour avec vue identique (~4 € avec conso).</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mar-171830',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mar-171830" hidden>
+    <p>💶 Kronotrop café (terrasse, 2 min de la Tour) — vue panoramique gratuite avec un café.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Galata Kulesi Meydanı, Beyoğlu</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Galata+Tower+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 3 min vers Karaköy</span></div></div>
+
+<div class="card" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">🍮</span>
+    <div class="card-meta">
+      <div class="card-time">19h–20h</div>
+      <div class="card-name">Karaköy Güllüoğlu — Baklava</div>
+    </div>
+    <span class="badge-price">3–5 €</span>
+  </div>
+  <p class="card-desc">Institution de Karaköy depuis 1949. Baklava à la pistache : pâte ultra-fine, beurre de mouton, sirop léger. Portion ~3–5 €. Déguster sur place debout ou en terrasse.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-1920',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-1920" hidden>
+    <p>La baklava est héritée des cuisines du Palais de Topkapi. Güllüoğlu est originaire de Gaziantep — capitale mondiale de la pistache. Le débat Güllüoğlu vs Hafız Mustafa est un sujet très sérieux à Istanbul.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-1920',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-1920" hidden>
+    <p>Ne jamais acheter baklava dans les boutiques dorées d'İstiklal = produit industriel. Ici c'est fait maison quotidiennement.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mar-1920',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mar-1920" hidden>
+    <p>💶 Hafız Mustafa 1864 (Sirkeci ou Eminönü) — autre institution historique, prix similaires.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Karaköy Rıhtım Cad., Tahir Han 3–4</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Karakoy+Gulluoglu+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min vers Unter</span></div></div>
+
+<div class="card card-lgbt" style="--ac:#6a1b9a">
+  <div class="card-head">
+    <span class="card-ico">🏳️‍🌈</span>
+    <div class="card-meta">
+      <div class="card-time">23h–05h</div>
+      <div class="card-name">Grande nuit — Unter + SuperFabric</div>
+    </div>
+    <span class="badge-price">Entrée 10–20 €</span>
+  </div>
+  <p class="card-desc">Unter (Kemeraltı Cad., Karaköy) — club underground techno/électro, crowd très libéral, ouvert jusqu'à 5h. SuperFabric (Cumhuriyet Cad. 42) — club LGBT+, gogoboys, DJ sets, crowd mixte festif. Bigudi Bar (Bekar Sk. 23, dernier étage) — bar LGBT+ local, intime.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mar-2305',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mar-2305" hidden>
+    <p>Unter est devenu un symbole de résistance culturelle laïque — 'Unter' (sous) = underground et esprit alternatif. SuperFabric est le club LGBT le plus connu d'Istanbul selon les guides 2025–2026.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mar-2305',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mar-2305" hidden>
+    <p>Unter : ~10 € semaine / ~20 € WE. SuperFabric : ~15–20 €. Taxi BiTaksi pour rentrer. Alt Kadıköy : Arkaoda (alternatif/indie, jusqu'à 5h).</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mar-2305',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mar-2305" hidden>
+    <p>💶 Kadife Sokak (Kadıköy) — bars de quartier, musique live, entrée libre, bière ~3 €.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Kemeraltı Cad., Karaköy (Unter)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Unter+Club+Karakoy+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="day-mer"><div class="day-hdr" style="background:#1b5e20">Mercredi 8 Avril — Grand Bazar, Bosphore &amp; Dernière nuit</div>
+<div class="tr tr-before"><span class="tr-arrow">↑</span><div class="tr-lines"><span class="tw">🚶 8 min depuis le Sofitel</span></div></div>
+<div class="card" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">☕</span>
+    <div class="card-meta">
+      <div class="card-time">09h–09h45</div>
+      <div class="card-name">Pera Palace Café — Petit-déjeuner</div>
+    </div>
+    <span class="badge-price">5–15 €</span>
+  </div>
+  <p class="card-desc">Bar Art Déco du palace légendaire d'Agatha Christie (elle y écrivit une partie du Crime de l'Orient-Express), Mata Hari et Atatürk. Intérieur inchangé depuis 1892.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-090945',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-090945" hidden>
+    <p>Le Pera Palace a été construit en 1892 pour les passagers de l'Orient-Express — le premier train de luxe Paris-Istanbul. La chambre 411 était celle d'Atatürk, conservée comme musée. Mata Hari y avait son quartier général d'espionnage pendant la Première Guerre mondiale.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-090945',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-090945" hidden>
+    <p>Juste un thé ou café pour voir l'intérieur (~5 €). Alt : Van Kahvaltı Evi (Cihangir) — meilleur kahvaltı d'Istanbul, ~12 €.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-090945',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-090945" hidden>
+    <p>💶 Simit + çay ambulant devant le Sofitel : 0,80–1,50 € total.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Meşrutiyet Cad. 52, Tepebaşı, Beyoğlu</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Pera+Palace+Hotel+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tt">🚌 Tram T1 → Beyazıt (~1,50 €, 15 min)</span><span class="tx">🚕 Taxi ~8–10 €</span></div></div>
+
+<div class="card" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">🛍</span>
+    <div class="card-meta">
+      <div class="card-time">10h–12h30</div>
+      <div class="card-name">Grand Bazar (Kapalı Çarşı)</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">65 rues, 4 000 boutiques, construit en 1461 par Mehmed II — le plus ancien centre commercial couvert du monde. Joaillerie en or, céramiques İznik, tapis, épices, cuir.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-101230',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-101230" hidden>
+    <p>Organisé par guildes — rue des bijoutiers, tapissiers, cuirassiers. Mehmed II l'a construit pour financer la mosquée de Fatih. Les prix de l'or sont officiellement affichés au-dessus de chaque boutique (prix au poids + main d'œuvre).</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-101230',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-101230" hidden>
+    <p>Entrer par la porte de Beyazıt (moins de pression). Négocier : commencer à 40 % du prix annoncé. Or : prix au poids officiels affichés = qualité garantie. Céramiques İznik ici = meilleur rapport qualité/prix de la ville.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-101230',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-101230" hidden>
+    <p>💶 Sahaflar Çarşısı (marché aux livres anciens, juste à côté) — manuscrits, cartes ottomanes. Gratuit, ambiance unique.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Beyazıt Meydanı, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Grand+Bazaar+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 10 min vers Eminönü</span></div></div>
+
+<div class="card" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">🌶</span>
+    <div class="card-meta">
+      <div class="card-time">12h30–13h30</div>
+      <div class="card-name">Mısır Çarşısı (Spice Bazaar)</div>
+    </div>
+    <span class="badge-price">Selon achats</span>
+  </div>
+  <p class="card-desc">Bazar des épices d'Eminönü (1664). Épices en vrac, thés, loukoums sous vide, nougats, fromages turcs. Déjeuner döner ou köfte en face ~4–6 €.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-12301330',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-12301330" hidden>
+    <p>Mısır signifie 'Égypte' — le bazar était financé par les taxes des caravanes venant d'Égypte. Istanbul était le hub mondial des épices avant que Vasco de Gama ouvre la route maritime des Indes (1498), contournant l'Empire ottoman. Cette concurrence a accéléré le déclin économique ottoman.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-12301330',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-12301330" hidden>
+    <p>Acheter : sumac, za'atar, thé turc en vrac, tahin (pâte de sésame), loukoums sous vide. Prix à négocier légèrement. Éviter les conditionnements touristiques flashy.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-12301330',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-12301330" hidden>
+    <p>💶 Déjeuner : döner kebab à 3 € sur Eminönü ou Hamdi Restaurant terrace (vue Corne d'Or, ~10 €).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Rüstempaşa Mah., Eminönü, Fatih</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Spice+Bazaar+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tt">🚌 Bus 22/22RE vers Beşiktaş (~1,50 €)</span><span class="tx">🚕 Taxi ~10–12 €</span></div></div>
+
+<div class="card" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">🏛</span>
+    <div class="card-meta">
+      <div class="card-time">14h–16h30</div>
+      <div class="card-name">Palais Dolmabahçe</div>
+    </div>
+    <span class="badge-price">~15–25 €</span>
+  </div>
+  <p class="card-desc">285 pièces, 43 salons, 14 tonnes d'or, lustre de la Reine Victoria (750 kg). Résidence d'Atatürk à sa mort en 1938 — les horloges du palais sont arrêtées à 9h05.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-141630',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-141630" hidden>
+    <p>Dolmabahçe (1856) symbolise la modernisation ottomane : Abdülmecid I voulait montrer que l'Empire était un état européen. Le coût (5 millions de pièces d'or) a accéléré la banqueroute ottomane. Atatürk qui abolit le sultanat mourut ironiquement dans ce même palais.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-141630',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-141630" hidden>
+    <p>Réserver sur millisultan.gov.tr (~15–25 €). FERMÉ LE LUNDI. Harem + Selamlık = 2h30. Jardins côté Bosphore = gratuits et magnifiques.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-141630',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-141630" hidden>
+    <p>💶 Palais Çırağan extérieur (10 min à pied) — café Kempinski bord de Bosphore (~8 €), vue magnifique.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Dolmabahçe Cad., Beşiktaş</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Dolmabahce+Palace+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 20 min longeant le Bosphore</span><span class="tt">🚌 Bus 22/22RE → Ortaköy (~1,50 €)</span><span class="tx">🚕 Taxi ~5–6 €</span></div></div>
+
+<div class="card" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">🌅</span>
+    <div class="card-meta">
+      <div class="card-time">17h–19h</div>
+      <div class="card-name">Ortaköy — Bosphore au coucher de soleil</div>
+    </div>
+    <span class="badge-price">~5 € (kumpir)</span>
+  </div>
+  <p class="card-desc">Mosquée baroque blanche directement sur l'eau avec le grand pont suspendu en fond. Kumpir : pomme de terre géante au four garnie (saucisse, fromages, maïs, olives) — 3–5 €.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-1719',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-1719" hidden>
+    <p>Le pont du Bosphore (1973) a été le premier pont reliant l'Europe et l'Asie en Turquie. La Mosquée d'Ortaköy (1855) est baroque-ottomane — un style hybride qui illustre les influences européennes du XIX° siècle.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-1719',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-1719" hidden>
+    <p>Arriver 17h–18h pour la lumière du coucher de soleil. Yıldız Parkı (anciens jardins privés des sultans, gratuit) = alternative verdoyante avec vues Bosphore.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-1719',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-1719" hidden>
+    <p>💶 Yıldız Parkı (entre Beşiktaş et Ortaköy) — jardins sultanesques ouverts au public, vues Bosphore, entièrement gratuit.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Ortaköy, Beşiktaş</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Ortakoy+Mosque+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tt">🚌 Bus 22 → Taksim/Kabataş (~1,50 €)</span><span class="tx">🚕 Taxi ~12–15 €</span></div></div>
+
+<div class="card" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">🍽</span>
+    <div class="card-meta">
+      <div class="card-time">19h30–22h</div>
+      <div class="card-name">Dîner — Zübeyir Ocakbaşı</div>
+    </div>
+    <span class="badge-price">15–22 €/pers</span>
+  </div>
+  <p class="card-desc">Institution de Beyoğlu. Grill sur charbon ouvert au centre du restaurant (ocakbaşı) : brochettes d'agneau, ailes de poulet, kokorec, lahmacun. Ambiance conviviale et festive.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-193022',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-193022" hidden>
+    <p>L'ocakbaşı (autour du feu) est une tradition turque : les convives s'assoient en cercle autour du gril. Mode de cuisson ET pratique sociale. La fumée du charbon de bois fait partie de l'expérience.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-193022',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-193022" hidden>
+    <p>Réserver pour 19h30. Commencer par mezze froids (cacık, patlıcan, hummus maison) puis les brochettes. ~15–20 €/pers avec rakı.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-193022',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-193022" hidden>
+    <p>💶 Adana Ocakbaşı (Kadıköy) — même concept côté asiatique, ~10–12 €/pers.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Bekar Sk. 28, Beyoğlu</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Zubeyir+Ocakbasi+Beyoglu+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 5 min vers Kastel / 360</span></div></div>
+
+<div class="card card-lgbt" style="--ac:#1b5e20">
+  <div class="card-head">
+    <span class="card-ico">🏳️‍🌈</span>
+    <div class="card-meta">
+      <div class="card-time">22h30–04h</div>
+      <div class="card-name">Dernière nuit — Kastel + 360 + options LGBT</div>
+    </div>
+    <span class="badge-price">20–35 €/pers</span>
+  </div>
+  <p class="card-desc">Kastel Rooftop (Beyoğlu) — électro/house branché, vue Bosphore + Corne d'Or, DJ sets. 360 Istanbul (penthouse İstiklal) — cocktails panoramiques dès 22h, club à 23h. SuperFabric (Elmadag) — soirées thématiques LGBT+, ouvert jusqu'à 4h. Vérifier @gzoneparties sur Instagram pour soirée queer du mercredi.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-mer-223004',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-mer-223004" hidden>
+    <p>Après l'attentat du Reina Club (Nouvel An 2017), les clubs ont renforcé la sécurité. Kastel et 360 représentent la continuité de la culture festive urbaine laïque.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-mer-223004',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-mer-223004" hidden>
+    <p>Les clubs démarrent vraiment à 00h30. Dîner tôt → bar à 22h → club après 23h30. Vérifier Instagram des clubs pour soirées spéciales.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-mer-223004',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-mer-223004" hidden>
+    <p>💶 Soirée croisière Bosphore nocturne — touristique mais festif, ~25–40 €/pers tout compris.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Beyoğlu (Kastel) / İstiklal Cad. (360)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=360+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="day-jeu"><div class="day-hdr" style="background:#0277bd">Jeudi 9 Avril — Départ ~12h</div>
+
+<div class="card" style="--ac:#0277bd">
+  <div class="card-head">
+    <span class="card-ico">☕</span>
+    <div class="card-meta">
+      <div class="card-time">09h–10h</div>
+      <div class="card-name">Sofitel — Dernier petit-déj + check-out</div>
+    </div>
+    <span class="badge-price">Inclus ou ~30 €</span>
+  </div>
+  <p class="card-desc">Buffet du Sofitel (viennoiseries, fromages turcs, olives, miel de Thrace, œufs, jus frais). Check-out officiel à 12h — demander la garde des bagages.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-jeu-0910',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-jeu-0910" hidden>
+    <p>Le miel de Thrace (région européenne de Turquie) est parmi les meilleurs du monde — fleurs sauvages et forêts de chênes. Le beyaz peynir (fromage blanc salé) ressemble à de la feta mais plus crémeux.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-jeu-0910',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-jeu-0910" hidden>
+    <p>Late check-out souvent accordé. L'équipe garde les bagages après le départ. Dernier simit + çay ambulant devant Taksim Square (~1 €).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Siraselviler Cad. No 13, Taksim</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Sofitel+Istanbul+Taksim" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 8 min vers Çukurcuma</span></div></div>
+
+<div class="card" style="--ac:#0277bd">
+  <div class="card-head">
+    <span class="card-ico">🛒</span>
+    <div class="card-meta">
+      <div class="card-time">10h–11h30</div>
+      <div class="card-name">Çukurcuma — Antiquaires &amp; souvenirs</div>
+    </div>
+    <span class="badge-price">Gratuit</span>
+  </div>
+  <p class="card-desc">La mecque des antiquaires d'Istanbul. Meubles ottomans, céramiques İznik, kilims, bibelots, livres anciens. Même sans acheter : flânerie excellente dans ce quartier bohème.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-jeu-101130',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-jeu-101130" hidden>
+    <p>Çukurcuma est le Drouot de Cihangir. Les objets viennent souvent de grandes demeures ottomanes démolies ou de successions. Les antiquaires les plus sérieux ont des pièces datant de l'Empire ottoman, période byzantine ou antiquité grecque.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-jeu-101130',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-jeu-101130" hidden>
+    <p>Céramiques İznik = le meilleur souvenir (bol ~15 €, vase ~30 €). Boutiques fermées avant 10h. Baylan sur İstiklal pour chocolats et halva sous vide.</p>
+  </div>
+</div><div class="expand-block alt-block">
+  <button class="expand-btn" onclick="tog('alt-jeu-101130',this)" aria-expanded="false">
+    <span>💶 Alternative pas chère</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="alt-jeu-101130" hidden>
+    <p>💶 Souvenirs économiques : épices en vrac emballées du Spice Bazaar (achetées la veille).</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Çukurcuma Cad., Beyoğlu (Cihangir)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Cukurcuma+Antiques+Cihangir+Istanbul" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+<div class="tr tr-after"><span class="tr-arrow">↓</span><div class="tr-lines"><span class="tw">🚶 10 min vers Taksim Square</span></div></div>
+<div class="tr tr-before"><span class="tr-arrow">↑</span><div class="tr-lines"><span class="tt">🚌 Metro M2 Taksim → Gayrettepe + M11 → IST (~1,50 €, 35 min) OU Havabus Taksim (~2 €, 45–60 min)</span><span class="tx">🚕 Taxi BiTaksi ~30–40 €</span></div></div>
+<div class="card" style="--ac:#0277bd">
+  <div class="card-head">
+    <span class="card-ico">✈</span>
+    <div class="card-meta">
+      <div class="card-time">11h30–12h</div>
+      <div class="card-name">Départ — Aéroport Istanbul (IST)</div>
+    </div>
+    <span class="badge-price">~1,50 € (metro) à ~40 € (taxi)</span>
+  </div>
+  <p class="card-desc">Compter 45–60 min depuis Taksim. Option la plus économique : Metro M2 (Taksim → Gayrettepe) + M11 (→ IST) : ~1,50 €, 35 min sans bouchons.</p>
+  <div class="expand-block ctx-block">
+  <button class="expand-btn" onclick="tog('ctx-jeu-113012',this)" aria-expanded="false">
+    <span>📖 Contexte &amp; histoire</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="ctx-jeu-113012" hidden>
+    <p>L'aéroport d'Istanbul (IST) est le plus grand d'Europe depuis 2022 — 90 millions de passagers/an. Construit en 3 ans sur une forêt du nord d'Istanbul. L'ancien aéroport Atatürk (ATA) est abandonné depuis 2019.</p>
+  </div>
+</div><div class="expand-block tip-block">
+  <button class="expand-btn" onclick="tog('tip-jeu-113012',this)" aria-expanded="false">
+    <span>💡 Tip local</span><span class="chev">›</span>
+  </button>
+  <div class="expand-body" id="tip-jeu-113012" hidden>
+    <p>M11 depuis Gayrettepe = meilleur compromis coût/fiabilité. Havabus depuis Taksim (~2 €) si bagages lourds. Taxi BiTaksi ~30–40 € selon trafic.</p>
+  </div>
+</div>
+  <div class="card-foot">
+    <span class="card-addr">📌 Istanbul Airport (IST)</span>
+    <a class="maps-cta" href="https://maps.google.com/?q=Istanbul+Airport+IST" target="_blank">📍 Ouvrir dans Maps</a>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="day-info"><div class="day-hdr" style="background:#37474f">ℹ️ Infos pratiques & essentiels</div><div class="info-sec"><div class="info-hdr" style="background:#1565c0">📱 eSIM — Internet</div><div class="info-row"><div class="info-lbl">✅ À FAIRE AVANT LE DÉPART</div><div class="info-val">Acheter une eSIM Turquie sur Airalo ou Holafly : ~5–10 € pour 5–10 Go, valable dès l'atterrissage. Aucune manipulation à l'aéroport.</div></div><div class="info-row"><div class="info-lbl">Airalo</div><div class="info-val">airalo.com — eSIM Turquie 1 Go ~2 €, 10 Go ~9 €. Activation instantanée.</div></div><div class="info-row"><div class="info-lbl">Holafly</div><div class="info-val">holafly.com — données illimitées Turquie 5 jours ~15 €.</div></div><div class="info-row"><div class="info-lbl">Alternative locale</div><div class="info-val">Carte SIM Turk Telekom ou Vodafone TR à l'aéroport ~20 €. Nécessite passeport. Moins pratique qu'une eSIM.</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#1b5e20">🚌 Istanbulkart — Transport</div><div class="info-row"><div class="info-lbl">✅ À ACHETER DÈS L'ARRIVÉE</div><div class="info-val">Machine IST niveau -2 ou dans n'importe quelle station. Carte : ~165 TRY (~5 €). Recharger ~400 TRY (~12 €) pour 5 jours.</div></div><div class="info-row"><div class="info-lbl">Couvre</div><div class="info-val">Metro, tram, bus, ferry Şehir Hatları, funiculaire, tramway nostaljik İstiklal. 1 trajet ~42 TRY (~1,20 €).</div></div><div class="info-row"><div class="info-lbl">Ne couvre PAS</div><div class="info-val">Dolmuş (minibus collectifs), taxis, Havabus aéroport (achat séparé ~2 €).</div></div><div class="info-row"><div class="info-lbl">Astuce</div><div class="info-val">Une seule carte utilisable pour deux personnes — tapper deux fois. Pas nominative.</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#c0392b">🏛 Museum Pass — Verdict</div><div class="info-row"><div class="info-lbl">❌ Non recommandé pour ce séjour</div><div class="info-val">La plupart des sites du programme sont GRATUITS (Sainte-Sophie, mosquées, Balat) ou NON INCLUS dans le pass (Dolmabahçe, Citerne Basilique).</div></div><div class="info-row"><div class="info-lbl">Topkapi (~45 €)</div><div class="info-val">Inclus dans le Museum Pass Istanbul (~40 €). Rentable uniquement si vous visitez aussi le Musée Archéologique.</div></div><div class="info-row"><div class="info-lbl">Recommandation</div><div class="info-val">Acheter les billets un par un et en ligne. Plus flexible, pas de risque de pass inutilisé.</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#e65100">💰 Argent &amp; Change</div><div class="info-row"><div class="info-lbl">Monnaie</div><div class="info-val">Livre turque (TRY). Taux avril 2026 : ~1 € = ~35–37 TRY. Istanbul très abordable pour les Européens.</div></div><div class="info-row"><div class="info-lbl">Retrait</div><div class="info-val">ATM des grandes banques (Ziraat, İş Bankası, Garanti). Éviter les distributeurs indépendants touristiques (frais excessifs).</div></div><div class="info-row"><div class="info-lbl">Change</div><div class="info-val">Döviz büfesi (bureaux de change Beyoğlu/Karaköy) = meilleurs taux, 5–10 % mieux que les banques.</div></div><div class="info-row"><div class="info-lbl">Budget/jour</div><div class="info-val">Hors hébergement : ~30–50 € (économique) à ~80–120 € (sorties + restaurants + entrées).</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#6a1b9a">📲 Apps indispensables</div><div class="info-row"><div class="info-lbl">BiTaksi ou inDriver</div><div class="info-val">Apps de taxi. Prix fixé à l'avance. BiTaksi = taxis officiels jaunes. inDriver = offres concurrentes.</div></div><div class="info-row"><div class="info-lbl">Google Maps</div><div class="info-val">Télécharger la carte Istanbul HORS-LIGNE avant le départ. Fonctionne très bien pour les transports en commun.</div></div><div class="info-row"><div class="info-lbl">Google Translate</div><div class="info-val">Mode caméra pour lire les menus turcs. Indispensable dans les lokantas sans menu traduit.</div></div><div class="info-row"><div class="info-lbl">Instagram</div><div class="info-val">Les clubs et événements LGBT communiquent uniquement sur Instagram : @gzoneparties @stayclub_istanbul @superfabricistanbul</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#37474f">👗 Codes vestimentaires</div><div class="info-row"><div class="info-lbl">Mosquées</div><div class="info-val">Épaules et genoux couverts obligatoires pour les deux. Chaussures à enlever. Écharpes gratuites à l'entrée de Sainte-Sophie et la Mosquée Bleue.</div></div><div class="info-row"><div class="info-lbl">Heures de prière</div><div class="info-val">Mosquées fermées ~30 min à chacune des 5 prières. App Ezan Vakti pour les horaires précis.</div></div><div class="info-row"><div class="info-lbl">Hammam</div><div class="info-val">Péştemal (serviette de coton) fourni. Sous-vêtements de bain conseillés. Pourboire ~20–30 TRY au tellak (masseur) apprécié.</div></div><div class="info-row"><div class="info-lbl">Météo avril</div><div class="info-val">12–18°C, risque de pluie. Veste légère + couche imperméable recommandées. Terrasses de bar ouvertes mais fraîches le soir.</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#7b1fa2">🏳️‍🌈 Istanbul LGBT — Ce qu'il faut savoir</div><div class="info-row"><div class="info-lbl">Légalité</div><div class="info-val">Homosexualité légale depuis 1858 — l'une des premières légalisations au monde. Mais AUCUNE protection légale contre la discrimination, aucune reconnaissance des couples.</div></div><div class="info-row"><div class="info-lbl">Contexte politique</div><div class="info-val">Istanbul Pride interdite depuis 2015. Gouvernement Erdoğan utilise la question LGBT comme enjeu électoral depuis 2013. La scène gay résiste dans Beyoğlu et Cihangir.</div></div><div class="info-row"><div class="info-lbl">Sécurité pratique</div><div class="info-val">À l'intérieur des bars/clubs LGBT = sûr et décontracté. En public : éviter les PDA très visibles hors de Cihangir/Asmalımescit. Dans les quartiers conservateurs (Fatih, Eyüp) = discrétion totale.</div></div><div class="info-row"><div class="info-lbl">Quartiers safe</div><div class="info-val">Cihangir, Asmalımescit, Beyoğlu, Karaköy, Galata, Kadıköy.</div></div><div class="info-row"><div class="info-lbl">Clubs LGBT</div><div class="info-val">Stay Club (Siraselviler 35/2 — votre rue !), Tek Yön Club (Beyoğlu), SuperFabric (Elmadag), Bigudi Bar (Bekar Sk. 23).</div></div><div class="info-row"><div class="info-lbl">Hammams gay friendly</div><div class="info-val">Firuzaga Hamam (Cihangir), Ağa Hamamı (votre hammam !), Yesildirek Hamam. Cihangir Sauna (Altıpatlar Sk. 14) = sauna gay.</div></div><div class="info-row"><div class="info-lbl">Santé</div><div class="info-val">Şişli et Beşiktaş : centres de santé LGBT gratuits et anonymes, accessibles aux touristes.</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#c0392b">📋 Réservations AVANT le départ</div><div class="info-row"><div class="info-lbl">⚠️ URGENT — Sainte-Sophie</div><div class="info-val">Inscription gratuite en ligne obligatoire. Site : muze.gov.tr</div></div><div class="info-row"><div class="info-lbl">⚠️ URGENT — Ağa Hamamı (lundi)</div><div class="info-val">Réserver sur agahamami.com. Créneaux limités, surtout en début de semaine.</div></div><div class="info-row"><div class="info-lbl">Citerne Basilique</div><div class="info-val">Réserver sur yerebatan.com (~15 €). Créneau horaire obligatoire.</div></div><div class="info-row"><div class="info-lbl">Palais Dolmabahçe</div><div class="info-val">Réserver sur millisultan.gov.tr (~15–25 €). FERMÉ LE LUNDI.</div></div><div class="info-row"><div class="info-lbl">Cérémonie Sema (dim. 17h)</div><div class="info-val">Billetterie SUR PLACE — passer le SAMEDI avant midi au Galata Mevlevi Müzesi.</div></div><div class="info-row"><div class="info-lbl">Restaurants</div><div class="info-val">Asmalı Cavit, Karaköy Lokantası, Zübeyir Ocakbaşı : réserver via Google Maps ou Instagram.</div></div></div><div class="info-sec"><div class="info-hdr" style="background:#b71c1c">🆘 Urgences &amp; Pratique</div><div class="info-row"><div class="info-lbl">Urgences</div><div class="info-val">Police : 155 | SAMU : 112 | Pompiers : 110</div></div><div class="info-row"><div class="info-lbl">Consulat de France</div><div class="info-val">İstiklal Cad. 8, Beyoğlu — +90 212 334 87 30</div></div><div class="info-row"><div class="info-lbl">Arnaques fréquentes</div><div class="info-val">Cirage de chaussures 'accidentel'. Invitation à une 'soirée de bienvenue' (addition piégée). Faux aide Istanbulkart à la borne (vol données CB).</div></div><div class="info-row"><div class="info-lbl">Langue utile</div><div class="info-val">Merhaba (bonjour) · Teşekkürler (merci) · Tamam (d'accord) · Su (eau) · Hesap (l'addition)</div></div></div></div>
+
+<footer>Fonctionne hors-ligne · Tap 📍 pour ouvrir Google Maps</footer>
+<script>
+function go(id){
+  document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
+  document.getElementById('day-'+id).classList.add('active');
+  var btn=document.getElementById('btn-'+id);
+  btn.classList.add('active');
+  btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function tog(id,btn){
+  var el=document.getElementById(id);
+  var open=!el.hidden;
+  el.hidden=open;
+  btn.setAttribute('aria-expanded',String(!open));
+}
+go('sam');
+</script>
+</body>
+</html>
